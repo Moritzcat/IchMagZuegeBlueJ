@@ -9,6 +9,7 @@ public class Bahnhof extends Track
 
     public Bahnhof()
     {
-       System.out.println("hhh"); 
+        super(2);
+        System.out.println("hhh"); 
     } 
 }

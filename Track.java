@@ -1,33 +1,29 @@
-
 /**
  * Beschreiben Sie hier die Klasse Track.
  * 
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class Track
+public abstract class Track
 {
-    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
-
-    /**
-     * Konstruktor für Objekte der Klasse Track
-     */
-    public Track()
-    {
-        // Instanzvariable initialisieren
-        x = 0;
+    public int numberOfConnections;
+    public ConnectionPoint[] connections;
+    public double [][] distBeweenCons; //[From][To]
+    Track(int numberOfConnections){
+        distBeweenCons=new double[numberOfConnections][numberOfConnections];
+        connections = new ConnectionPoint[numberOfConnections];
+        
+        for (int from = 1; from <numberOfConnections; from++) {
+            for (int to = 1; to <numberOfConnections; to++) {
+                distBeweenCons[from][to]=-1;
+            }
+        }
+        
+        //for(double[] distFrom:distBeweenCons){
+            //for(double distTo:distFrom){}}
     }
-
-    /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
-     * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
-     */
-    public int beispielMethode(int y)
-    {
-        // tragen Sie hier den Code ein
-        return x + y;
+    protected void newDoubleConnection(int c1, int c2, double dist){
+                distBeweenCons[c1][c2]=dist;
+                distBeweenCons[c2][c1]=dist;
     }
 }

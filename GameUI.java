@@ -14,5 +14,13 @@ public class GameUI extends JPanel
     {
         
     }
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
 
+        int w = getWidth();
+        int h = getHeight();
+        
+        
+    }
 }

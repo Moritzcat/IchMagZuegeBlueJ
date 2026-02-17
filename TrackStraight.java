@@ -7,10 +7,11 @@
  */
 public class TrackStraight extends Track
 {
+    double lenght;
+    public TrackStraight(){
+        super(2);
+        newDoubleConnection(0,1,lenght);
     
-    public TrackStraight()
-    {
-        
     }
 
     
